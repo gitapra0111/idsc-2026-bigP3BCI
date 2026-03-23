@@ -1,0 +1,26 @@
+# ==========================================
+# DEPENDENSI PROYEK IDSC 2026 - TIM SIGSQUAD
+# Tema: bigP3BCI (Brain-Computer Interface)
+# ==========================================
+
+# URL khusus agar otomatis mengunduh PyTorch versi GPU (CUDA 11.8)
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+# 1. Pemrosesan Sinyal EEG & Manipulasi Data Murni
+mne>=1.6.0
+numpy>=1.26.0
+scipy>=1.11.0
+pandas>=2.1.0
+
+# 2. Machine Learning & Deep Learning (Sesuai Aturan Kompetisi)
+scikit-learn>=1.3.0
+torch==2.7.1+cu118
+torchvision==0.22.1+cu118
+torchaudio==2.7.1+cu118
+
+# 3. Visualisasi Data (Sangat penting untuk Interpretasi Klinis & Laporan)
+matplotlib>=3.8.0
+seaborn>=0.13.0
+
+# 4. Dukungan Jupyter Notebook (Karena kamu memakai VS Code .ipynb)
+ipykernel>=6.29.0

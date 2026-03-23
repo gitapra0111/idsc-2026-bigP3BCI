@@ -1,0 +1,16 @@
+# Abaikan Virtual Environment (SANGAT PENTING)
+env_bci/
+
+# Abaikan folder sistem/log yang tidak perlu
+bin/
+catboost_info/
+results/
+docs/
+
+# Abaikan dataset raksasa (44 GB)
+data/
+
+# Abaikan file sistem Python dan pengaturan teks editor
+__pycache__/
+*.pyc
+.vscode/
