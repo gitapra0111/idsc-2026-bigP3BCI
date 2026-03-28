@@ -8,7 +8,8 @@ This repository contains the complete pipeline for data processing, model traini
 
 ## 📄 Technical Report
 The comprehensive documentation detailing our methodology, data processing, model architecture, and evaluation metrics can be accessed here:
-📥 **[Read the Full Tech Report](tech-report/Sigsquad-Tech_Report_IDSC.pdf)**
+📥 **[Download or Read the Full Tech Report Here](https://raw.githubusercontent.com/gitapra0111/idsc-2026-bigP3BCI/main/tech-report/Sigsquad-Tech_Report_IDSC.pdf)**
+
 
 ## 🚀 Live Demo (UI/UX Prototype)
 We translated the sharpness of our model predictions into an intuitive, ready-to-use Virtual Keyboard prototype.
