@@ -8,7 +8,7 @@ This repository contains the complete pipeline for data processing, model traini
 
 ## 🚀 Live Demo (UI/UX Prototype)
 We translated the sharpness of our model predictions into an intuitive, ready-to-use Virtual Keyboard prototype.
-🔗 **[Access the P300 Speller Prototype Here]([https://idsc-2026-big-p3-bci.vercel.app/show/speller.html])**
+🔗 🔗 **[Access the P300 Speller Prototype Here](https://idsc-2026-big-p3-bci.vercel.app/show/speller.html)**
 
 ---
 
