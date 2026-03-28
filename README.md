@@ -6,6 +6,10 @@ This repository contains the complete pipeline for data processing, model traini
 
 ---
 
+## 📄 Technical Report
+The comprehensive documentation detailing our methodology, data processing, model architecture, and evaluation metrics can be accessed here:
+📥 **[Read the Full Tech Report](tech-report/Sigsquad-Tech_Report_IDSC.pdf)**
+
 ## 🚀 Live Demo (UI/UX Prototype)
 We translated the sharpness of our model predictions into an intuitive, ready-to-use Virtual Keyboard prototype.
 🔗 🔗 **[Access the P300 Speller Prototype Here](https://idsc-2026-big-p3-bci.vercel.app/show/speller.html)**
@@ -24,6 +28,7 @@ Based on extensive evaluation on a massive TEST dataset using the **AUC (Area Un
 ---
 
 ## 📁 Main Repository Structure
+* `tech-report/` : Contains the comprehensive Technical Report document for IDSC 2026.
 * `src/preprocessing/` : Scripts for data cleaning, band-pass filtering, epoching, and normalization.
 * `src/training/` : AI model training scripts (EEGNet, CatBoost, XGBoost).
 * `src/visual/` : ROC curve comparison and visualization scripts (Anti-OOM optimized).
