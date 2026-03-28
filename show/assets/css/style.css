@@ -1,0 +1,104 @@
+        body {
+            background-color: #050505; /* Lebih gelap, pure black */
+            color: #888;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- ELEMEN BARU: MEDICAL DASHBOARD HEADER --- */
+        .medical-header {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            color: #00ffcc;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 20px;
+        }
+        .live-indicator {
+            color: #39ff14;
+            animation: blink 1s infinite;
+        }
+
+        /* --- ELEMEN LAMA YANG DIPEROLEK --- */
+        .header-container {
+            margin-bottom: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .ai-status {
+            color: #00ffcc;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* --- ELEMEN BARU: CONFIDENCE METER --- */
+        .confidence-meter {
+            font-size: 0.8rem;
+            color: #aaa;
+            font-family: monospace;
+            margin-bottom: 10px;
+            height: 15px;
+        }
+        .conf-value { color: #ffeb3b; }
+
+        .output-text {
+            color: #ffffff;
+            font-size: 3.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 70px;
+            border-bottom: 3px solid #00ffcc;
+            padding: 0 30px;
+            letter-spacing: 5px;
+        }
+
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        /* --- MATRIX GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            background-color: #0f0f0f;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #222; /* Kesan layar monitor */
+            box-shadow: 0 0 40px rgba(0, 255, 204, 0.05); /* Glow tipis di belakang matrix */
+        }
+
+        .cell {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            background-color: #161616;
+            border-radius: 8px;
+            transition: all 0.05s ease;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .flash {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            box-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
+            transform: scale(1.08);
+            border-radius: 4px;
+        }

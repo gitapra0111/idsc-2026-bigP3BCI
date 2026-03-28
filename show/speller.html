@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P300 Speller - UI/UX Prototype</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="medical-header">
+        <div>SUBJECT: ID-042 | DATASET: bigP3BCI</div>
+        <div class="live-indicator">● LIVE EEG STREAM</div>
+        <div>MODEL: EEGNet | CHANNELS: 8</div>
+    </div>
+
+    <div class="header-container">
+        <div class="ai-status">REAL-TIME P300 DECODING</div>
+        <div class="confidence-meter" id="confidence">Waiting for P300 spike...</div>
+        <div class="output-text" id="output">_</div>
+    </div>
+
+    <div class="grid" id="speller"></div>
+
+    <script>
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789_".split('');
+        const grid = document.getElementById('speller');
+        const cells = [];
+
+        chars.forEach(c => {
+            let div = document.createElement('div');
+            div.className = 'cell';
+            div.textContent = c;
+            grid.appendChild(div);
+            cells.push(div);
+        });
+
+        // 1. Logika Berkedip (Stimulus)
+        function flash() {
+            cells.forEach(c => c.classList.remove('flash'));
+            let isRow = Math.random() > 0.5;
+            let index = Math.floor(Math.random() * 6);
+            
+            for(let i = 0; i < 6; i++) {
+                let cellIndex = isRow ? (index * 6 + i) : (i * 6 + index);
+                cells[cellIndex].classList.add('flash');
+            }
+            
+            setTimeout(() => {
+                cells.forEach(c => c.classList.remove('flash'));
+            }, 100); 
+        }
+        setInterval(flash, 250);
+
+        // 2. Logika Mengetik & Confidence Meter
+        const targetWord = "SIGSQUAD";
+        let typeIdx = 0;
+        const output = document.getElementById('output');
+        const confidence = document.getElementById('confidence');
+
+        setInterval(() => {
+            if (typeIdx <= targetWord.length) {
+                // Tampilkan huruf
+                output.textContent = targetWord.substring(0, typeIdx) + (typeIdx < targetWord.length ? "_" : "");
+                
+                // Ubah teks confidence seolah-olah AI sedang menghitung probabilitas
+                if (typeIdx < targetWord.length) {
+                    let fakeProb = (Math.random() * (98.5 - 85.0) + 85.0).toFixed(1);
+                    confidence.innerHTML = `P300 Detected. Confidence: <span class="conf-value">${fakeProb}%</span>`;
+                    
+                    // Reset tulisan confidence setelah 1 detik
+                    setTimeout(() => {
+                        confidence.innerHTML = "Scanning next target...";
+                    }, 1000);
+                } else {
+                    confidence.innerHTML = "<span style='color:#39ff14'>SEQUENCE COMPLETE</span>";
+                }
+                
+                typeIdx++;
+            } else {
+                typeIdx = 0; 
+                output.textContent = "_";
+                confidence.innerHTML = "Waiting for P300 spike...";
+            }
+        }, 2500); // Ngetik 1 huruf setiap 2.5 detik
+    </script>
+</body>
+</html>
